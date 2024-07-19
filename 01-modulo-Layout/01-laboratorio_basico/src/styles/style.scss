@@ -1,0 +1,101 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "theme-A" as *;
+//@use "theme-B" as *;
+
+body {
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-1,
+.container-2,
+.container-3 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+
+  & .box {
+    color: gray;
+    font-weight: bold;
+    justify-self: center;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+.container-1 {
+  @include color-palette($color-red-base, 4, 20);
+}
+
+.container-2 {
+  @include color-palette($color-blue-base, 4, 20);
+}
+
+.container-3 {
+  @include color-palette($color-green-base, 4, 20);
+}
+
+.container-4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .base {
+    font: {
+      family: $primary-font-theme;
+      weight: bold;
+    }
+    width: 100px;
+    height: 100px;
+    margin: 1px 0;
+    border: 1px solid black;
+    border-radius: $border-radius-theme;
+    text-align: center;
+    line-height: 100px;
+    background-color: $color-theme;
+    color: $color-font-theme;
+  }
+  .important {
+    @extend .base;
+    background-color: darken($color-theme, 20);
+  }
+
+  .warning {
+    @extend .base;
+    background-color: lighten($color-theme, 30);
+  }
+
+  .font-1 {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    font-family: $primary-font-theme;
+  }
+
+  .font-2 {
+    @extend .font-1;
+    font-family: $secondary-font-theme;
+  }
+
+  .box-shadow {
+    @extend .base;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: $box-shadow-theme;
+  }
+}

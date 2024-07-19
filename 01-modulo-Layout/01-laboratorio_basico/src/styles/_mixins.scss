@@ -1,0 +1,39 @@
+@mixin color-lighten($color, $total-children, $intensity) {
+  $counter: 0;
+  @for $i from 1 through $total-children {
+    &.lighten-#{$i} {
+      $increment: calc($intensity / $total-children);
+      $counter: $counter + $increment;
+      $amount: (0 + $counter);
+      background-color: lighten($color, $amount);
+    }
+  }
+}
+
+@mixin color-darken($color, $total-children, $intensity) {
+  $counter: 0;
+  @for $i from 1 through $total-children {
+    &.darken-#{$i} {
+      $increment: calc($intensity / $total-children);
+      $counter: $counter + $increment;
+      $amount: (0 + $counter);
+      background-color: darken($color, $amount);
+    }
+  }
+}
+
+@mixin color-palette($color-base, $total-children, $intensity) {
+  & div[class*="darken-"] {
+    @include color-darken($color-base, $total-children, $intensity);
+  }
+
+  & div[class*="lighten-"] {
+    @include color-lighten($color-base, $total-children, $intensity);
+  }
+
+  & .base-color {
+    color: white;
+    background-color: $color-base;
+    width: 120px;
+  }
+}

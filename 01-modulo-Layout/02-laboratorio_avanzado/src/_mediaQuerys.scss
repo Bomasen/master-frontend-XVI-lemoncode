@@ -1,0 +1,152 @@
+@use "./variables" as *;
+@use './helpers' as *;
+
+@media screen and (max-width: 1280px) {
+    .main-container {
+      & .top {
+        max-height: height-calculate(250px);
+        & .top-item {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+      .item {
+        img {
+          min-width: 250px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1170px) {
+    .header-container {
+      & .header-logo {
+        & .platform-title {
+          display: none;
+        }
+      }
+    }
+  
+    .main-container {
+      & .section-title {
+        & #top-text::after {
+          content: "3";
+        }
+      }
+  
+      & .top {
+        max-height: height-calculate(320px);
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        overflow-y: hidden;
+        flex-flow: row wrap;
+        & .top-item {
+          img {
+            max-width: 320px;
+          }
+        }
+      }
+  
+      .item {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .main-container {
+      & .top {
+        max-height: height-calculate(280px);
+        justify-content: space-evenly;
+        & .top-item {
+          img {
+            max-width: 280px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 880px) {
+    .main-container {
+      & .top {
+        max-height: height-calculate(250px);
+        justify-content: space-evenly;
+  
+        & .top-item {
+          img {
+            max-width: 250px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 780px) {
+    .main-container {
+      & .top {
+        max-height: height-calculate(225px);
+        justify-content: space-evenly;
+        & .top-item {
+          img {
+            max-width: 225px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 706px) {
+    .main-container {
+      & .section-title {
+        & #top-text::after {
+          content: "2";
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 525px) {
+    .header-container {
+      justify-content: space-between;
+      & .header-logo {
+        img {
+          max-width: 150px;
+        }
+        & .platform-title {
+          display: none;
+        }
+      }
+      & .header-buttons {
+        a {
+          font-size: $font-size-scale-2;
+        }
+      }
+    }
+  
+    .main-container {
+      & .section-title {
+        font-size: $font-size-scale-1;
+        & #top-text::after {
+          content: "5";
+        }
+      }
+  
+      & .top {
+        max-height: 100%;
+        overflow-y: visible;
+        flex-flow: column nowrap;
+        gap: 10px;
+        & .top-item {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,130 @@
+@use "./variables" as *;
+@use "./helpers" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 10px;
+  font-family: $font-family-basic;
+  font-weight: $font-weight-basic;
+  background-color: $background-color-basic;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  background-color: $background-color-basic;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  & .header-logo {
+    display: flex;
+    place-items: center;
+    gap: 20px;
+    img {
+      max-width: 100px;
+    }
+    & .platform-title {
+      font-size: $font-size-scale-1;
+    }
+  }
+
+  & .header-buttons {
+    display: flex;
+    place-items: center;
+    gap: 20px;
+
+    a {
+      width: 50px;
+      height: 35px;
+      text-align: center;
+      font-size: $font-size-scale-3;
+      line-height: 35px;
+      text-decoration: none;
+      border-radius: 5px;
+      &:hover {
+        color: initial;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.main-container {
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+  flex-flow: wrap column;
+  place-items: center;
+  place-content: center;
+
+  & .section-title {
+    font-size: $font-size-scale-2;
+    margin-top: 30px;
+    width: 100%;
+    & #top-text {
+      font-weight: $font-weight-bold;
+      &::after {
+        content: "5";
+      }
+    }
+  }
+
+  & .top {
+    flex-basis: auto;
+    display: flex;
+    gap: 10px;
+    & .top-item {
+      img {
+        max-width: 250px;
+        min-width: 225px;
+      }
+    }
+  }
+
+  & .first {
+    @include secondary-main();
+  }
+
+  & .second {
+    @include secondary-main();
+  }
+
+  .item {
+    max-width: 650px;
+    flex: 1 1 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s;
+
+    &:hover {
+      flex-basis: calc(150px * 1.2);
+      border: 1px solid white;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    img {
+      width: 100%;
+      min-width: 200px;
+      object-fit: contain;
+    }
+  }
+}
+// cSpell: ignore Querys
+@import "./mediaQuerys";

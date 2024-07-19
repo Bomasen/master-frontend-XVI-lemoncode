@@ -1,0 +1,13 @@
+@mixin secondary-main {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+  
+  @function height-calculate($height-element) {
+    @return $height-element * 0.8;
+  }

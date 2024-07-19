@@ -1,0 +1,59 @@
+@media screen and (max-width: 768px) {
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    & .header {
+      & #toolbar {
+        display: none;
+      }
+    }
+
+    & .menu {
+      max-height: 100px;
+      position: sticky;
+      top: 0px;
+      & .menu-container {
+        width: 100%;
+        padding: 5px;
+
+        & .menu-title {
+          display: none;
+        }
+
+        & .menu-list {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-evenly;
+          gap: 0;
+          li {
+            text-align: center;
+            width: 100px;
+          }
+        }
+      }
+    }
+    & .main {
+      width: 100%;
+      & .main-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      & .card {
+        width: 90%;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0px;
+        & .member-name {
+          margin: 0;
+          width: 50%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
