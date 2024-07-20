@@ -1,0 +1,14 @@
+# Directorios de entorno de desarrollo
+node_modules/
+vendor/
+tmp/
+temp/
+.vscode/
+.idea/
+.env
+
+# Archivos de compilación y paquetes
+dist/
+build/
+target/
+out/

@@ -1,0 +1,7 @@
+$background-color-p: green;
+
+.container {
+  & p {
+    background-color: $background-color-p;
+  }
+}
