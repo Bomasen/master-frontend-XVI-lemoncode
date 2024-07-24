@@ -1,4 +1,4 @@
-## Módulo 3 - BUNDLING - Laboratorio 1
+# Módulo 3 - BUNDLING - Laboratorio 1
 
 Este ejercicio se ha realizado siguiendo las siguiente directrices:
 
@@ -11,13 +11,13 @@ Este ejercicio se ha realizado siguiendo las siguiente directrices:
 - Crear variables de entorno y ejecutar en distintos entornos.
 - Utilizar alguna herramienta para adquirir datos de contenido y espaciado de datos en el bundle.
 
-# Instalar dependencias:
+## Instalar dependencias:
 
 ```bash
 npm install
 ```
 
-# Iniciar aplicación:
+## Iniciar aplicación:
 
 - Para arrancar entorno de desarrollo en servidor:
 
